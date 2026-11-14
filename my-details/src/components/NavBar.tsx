@@ -3,11 +3,17 @@
 import Link from "next/link";
 import { useState } from "react";
 
+import { resetWelcomeState } from "@/components/SplashScreen";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { navItems, profile } from "@/data/profile";
 
 export function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleReplayIntro = () => {
+    resetWelcomeState();
+    window.location.reload();
+  };
 
   return (
     <header className="sticky top-0 z-30 border-b border-slate-200/80 bg-white/80 backdrop-blur dark:border-slate-700/80 dark:bg-slate-950/80">
@@ -42,6 +48,13 @@ export function NavBar() {
               </nav>
             </div>
 
+            <button
+              type="button"
+              onClick={handleReplayIntro}
+              className="hidden rounded-full border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-slate-700 shadow-sm transition hover:border-cyan-300 hover:text-cyan-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 sm:inline-flex"
+            >
+              Replay intro
+            </button>
             <ThemeToggle />
             <button
               type="button"

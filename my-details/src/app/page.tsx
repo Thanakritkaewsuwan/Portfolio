@@ -1,12 +1,14 @@
 import Link from "next/link";
 
 import { SectionCard } from "@/components/SectionCard";
+import { WelcomeGate } from "@/components/SplashScreen";
 import { getProfileData } from "@/services/profile.service";
 
 export default async function HomePage() {
   const profile = await getProfileData();
   return (
-    <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
+    <WelcomeGate>
+      <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
       <section className="grid gap-6 lg:grid-cols-[1.3fr_0.7fr]">
         <div className="rounded-[28px] bg-linear-to-br from-slate-900 via-slate-800 to-cyan-700 p-8 text-white shadow-xl shadow-slate-300/30 dark:shadow-none">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">Personal profile</p>
@@ -131,6 +133,7 @@ export default async function HomePage() {
           </div>
         </SectionCard>
       </div>
-    </main>
+      </main>
+    </WelcomeGate>
   );
 }

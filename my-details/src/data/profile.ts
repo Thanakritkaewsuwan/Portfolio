@@ -1,10 +1,10 @@
 import type { Profile } from "@/types/profile";
 
 export const profile: Profile = {
-  name: "Nattapong Srisawat",
+  name: "Thanakrit (Faze)",
   title: "Product-minded developer and lifelong learner",
   location: "Bangkok, Thailand",
-  email: "hello@portfolioweb.dev",
+  email: "",
   summary:
     "I enjoy turning complex ideas into structured systems that are useful, maintainable, and genuinely enjoyable to use. My work blends product thinking, software craftsmanship, and a habit of documenting what I learn so it can scale over time.",
   stats: [
